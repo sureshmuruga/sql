@@ -2,24 +2,25 @@
   <head><title>sql Query</title></head>
     <body>
      <pre>
-            create table emp(empId number(4) primary key,empname varchar(25) not null,dept varchar(25),salary number(7),unique(dept), check(salary>30000));
-            insert into emp values(1001,'ram','sales',35000);
-            insert into emp values(1002,'raj','accounts',55000);
-            insert into emp values(1003,'ravi','marketing',60000);
-            insert into emp values(1004,'raaman','development',55000);
-            insert into emp values(1005,'raaman','develop',75000);
-            select empname from emp where salary between 35000 and 40000; 
-            select max(salary),min(salary),sum(salary),avg(salary) from emp;
-            alter table emp add column doj date ;
-            alter table emp add column locno number(10);
-            update  emp set salary=55000 where empId=1004;
-            update emp set doj='13/11/11' where empId<=1005;
-            update emp set locno=100 where empid<=1003;
-            update emp set locno=200 where empid between 1003 and 1005;
-            select locno ,count(locno) from emp group by locno;
-            select locno ,empId, salary from emp group by locno having max(salary) ;
-            --select month_between("24-02-2021") from emp where empid=1001;
-            select * from emp;
+          create table emp(empId number(4) primary key,empname varchar(25) not null,dept varchar(25),salary number(7),unique(dept), check(salary>30000));--create query
+          insert into emp values(1001,'ram','sales',35000);--insert query
+          insert into emp values(1002,'raj','accounts',55000);
+          insert into emp values(1003,'ravi','marketing',60000);
+          insert into emp values(1004,'raaman','development',55000);
+          insert into emp values(1005,'raaman','develop',75000);
+          select empname from emp where salary between 35000 and 40000; 
+          select max(salary),min(salary),sum(salary),avg(salary) from emp;
+          alter table emp add column doj date ;
+          alter table emp add column locno number(10); -- alter query
+          update  emp set salary=55000 where empId=1004;-- update query
+          update emp set doj='13/11/11' where empId<=1005;
+          update emp set locno=100 where empid<=1003;
+          update emp set locno=200 where empid between 1003 and 1005; --between query
+          select locno ,count(locno) from emp group by locno; -- groupby query
+          select locno ,empId, salary from emp group by locno having max(salary) ;-- having query
+          select empId,salary from emp where salary in (55000,60000,75000);-- in query
+          --select month_between("24-02-2021") from emp where empid=1001;
+          select * from emp;
      </pre> 
     </body>
 </html>
